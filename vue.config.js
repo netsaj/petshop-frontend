@@ -3,7 +3,18 @@ const webpack = require("webpack");
 module.exports = {
     "pluginOptions": {
         "electronBuilder": {
-            "nodeIntegration": true
+            "nodeIntegration": true,
+            builderOptions: {
+                win: {
+                    icon: './icons/icon.ico'
+                },
+                mac:{
+                    icon: './icons/icon.icns'
+                },
+                linux:{
+                    icon: './icons'
+                }
+            }
         }
     },
     "transpileDependencies": [
