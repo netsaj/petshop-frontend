@@ -1,27 +1,26 @@
-# vuestudio
+# Petshop frontend
+
+
 
 ## Project setup
 ```
-npm install
+yarn install
 ```
-Note: if install failed, try witch
-```
-npm install --legacy-peer-deps
-```
+
 
 ### Compiles and hot-reloads for development
 ```
-npm run serve
+yarn electron:serve
 ```
 
 ### Compiles and minifies for production
 ```
-npm run build
+npm run electron:build
 ```
 
 ### Lints and fixes files
 ```
-npm run lint
+yarn run lint
 ```
 
 ### Customize configuration

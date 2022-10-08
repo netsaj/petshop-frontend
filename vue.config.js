@@ -7,13 +7,13 @@ module.exports = {
             "nodeIntegration": true,
             builderOptions: {
                 win: {
-                    icon: './icons/icon.ico'
+                    icon: './icons/icon.ico',
                 },
-                mac:{
-                    icon: './icons/icon.icns'
-                },
+                 mac:{
+                     icon: './icons/icon.icns'
+                 },
                 linux:{
-                    icon: './icons'
+                    icon: './icons/256x256.png'
                 }
             }
         }
