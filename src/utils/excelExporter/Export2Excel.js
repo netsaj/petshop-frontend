@@ -5,7 +5,7 @@
  */
 
 import { saveAs } from 'file-saver'
-import XLSX from 'xlsx'
+import xlsx from 'xlsx'
 
 function generateArray(table) {
    var out = [];
@@ -21,14 +21,14 @@ function generateArray(table) {
          var rowspan = cell.getAttribute('rowspan');
          var cellValue = cell.innerText;
          if (cellValue !== "" && cellValue == +cellValue) cellValue = +cellValue;
-         
+
          //Skip ranges
          ranges.forEach(function (range) {
             if (R >= range.s.r && R <= range.e.r && outRow.length >= range.s.c && outRow.length <= range.e.c) {
                for (var i = 0; i <= range.e.c - range.s.c; ++i) outRow.push(null);
             }
          });
-         
+
          //Handle Row Span
          if (rowspan || colspan) {
             rowspan = rowspan || 1;
@@ -44,10 +44,10 @@ function generateArray(table) {
                }
             });
          };
-         
+
          //Handle Value
          outRow.push(cellValue !== "" ? cellValue : null);
-         
+
          //Handle Colspan
          if (colspan)
             for (var k = 0; k < colspan - 1; ++k) outRow.push(null);
@@ -89,7 +89,7 @@ function sheet_from_array_of_arrays(data, opts) {
             c: C,
             r: R
          });
-         
+
          if (typeof cell.v === 'number') cell.t = 'n';
          else if (typeof cell.v === 'boolean') cell.t = 'b';
          else if (cell.v instanceof Date) {
@@ -97,7 +97,7 @@ function sheet_from_array_of_arrays(data, opts) {
             cell.z = XLSX.SSF._table[14];
             cell.v = datenum(cell.v);
          } else cell.t = 's';
-         
+
          ws[cell_ref] = cell;
       }
    }
@@ -122,28 +122,28 @@ export function export_table_to_excel(id) {
    var theTable = document.getElementById(id);
    var oo = generateArray(theTable);
    var ranges = oo[1];
-   
+
    /* original data */
    var data = oo[0];
    var ws_name = "SheetJS";
-   
+
    var wb = new Workbook(),
       ws = sheet_from_array_of_arrays(data);
-   
+
    /* add ranges to worksheet */
    // ws['!cols'] = ['apple', 'banan'];
    ws['!merges'] = ranges;
-   
+
    /* add worksheet to workbook */
    wb.SheetNames.push(ws_name);
    wb.Sheets[ws_name] = ws;
-   
+
    var wbout = XLSX.write(wb, {
       bookType: 'xlsx',
       bookSST: false,
       type: 'binary'
    });
-   
+
    saveAs(new Blob([s2ab(wbout)], {
       type: "application/octet-stream"
    }), "test.xlsx")
@@ -162,22 +162,22 @@ export function export_json_to_excel({
    filename = filename || 'excel-list'
    data = [...data]
    data.unshift(header);
-   
+
    for (let i = multiHeader.length - 1; i > -1; i--) {
       data.unshift(multiHeader[i])
    }
-   
+
    var ws_name = "SheetJS";
    var wb = new Workbook(),
       ws = sheet_from_array_of_arrays(data);
-   
+
    if (merges.length > 0) {
       if (!ws['!merges']) ws['!merges'] = [];
       merges.forEach(item => {
          ws['!merges'].push(XLSX.utils.decode_range(item))
       })
    }
-   
+
    if (autoWidth) {
       /*设置worksheet每列的最大宽度*/
       const colWidth = data.map(row => row.map(val => {
@@ -209,11 +209,11 @@ export function export_json_to_excel({
       }
       ws['!cols'] = result;
    }
-   
+
    /* add worksheet to workbook */
    wb.SheetNames.push(ws_name);
    wb.Sheets[ws_name] = ws;
-   
+
    var wbout = XLSX.write(wb, {
       bookType: bookType,
       bookSST: false,

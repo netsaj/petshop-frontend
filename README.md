@@ -4,6 +4,10 @@
 ```
 npm install
 ```
+Note: if install failed, try witch
+```
+npm install --legacy-peer-deps
+```
 
 ### Compiles and hot-reloads for development
 ```
