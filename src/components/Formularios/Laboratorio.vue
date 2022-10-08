@@ -273,9 +273,9 @@
 import pdf from 'vue-pdf'
 import ModalVisor from "@/components/utils/ModalVisor";
 
-const {BrowserWindow} = require('electron').remote
-const PDFWindow = require('electron-pdf-window')
+const {BrowserWindow}  = require("@electron/remote")
 const calendar = require('../../utils/calendar')
+//const PDFWindow = require('electron-pdf-window')
 
 function openModal(url) {
  modal.open(url, {
@@ -428,14 +428,17 @@ export default {
                 const win = new BrowserWindow({
                     width: 1000,
                     height: 620,
-                    webPreferences: {plugins: false, nodeIntegration: false}
+                    webPreferences: {
+                        plugins: true
+                    }
                 })
-                PDFWindow.addSupport(win)
-                win.hide()
-                win.close()
-                //this.external_resource = this.$http.defaults.baseURL + "/" + row.archivo.ruta
-                //this.$refs.modalVisor.showModal()
-                window.open(this.$http.defaults.baseURL + "/" + row.archivo.ruta, "_blank")
+                //PDFWindow.addSupport(win)
+                //win.hide()
+                //win.close()
+                this.external_resource = this.$http.defaults.baseURL + "/" + row.archivo.ruta
+                win.loadURL(this.external_resource)
+                this.$refs.modalVisor.showModal()
+
             } else {
                 window.open(this.$http.defaults.baseURL + "/" + row.archivo.ruta, "_blank")
             }

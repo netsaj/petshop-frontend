@@ -937,8 +937,8 @@ import {es} from 'vuejs-datepicker/dist/locale'
 import * as models from "@/utils/models";
 import {mapState} from "vuex";
 
-const {BrowserWindow} = require('electron').remote
-const PDFWindow = require('electron-pdf-window')
+const {BrowserWindow}  = require("@electron/remote")
+//const PDFWindow = require('electron-pdf-window')
 const calendar = require('../../utils/calendar')
 export default {
     components: {Datepicker},

@@ -1004,6 +1004,23 @@
     global-agent "^3.0.0"
     global-tunnel-ng "^2.7.1"
 
+"@electron/osx-sign@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@electron/osx-sign/-/osx-sign-1.0.1.tgz#ab4fceded7fed9f2f18c25650f46c1e3a6f17054"
+  integrity sha512-WkUcva+qkt809bI6uxxEG/uOWfl8HAw0m8aPijpKmGMIpZ1CWWB808YG6aY3wckUO86xZdmiOsUJTM4keLhY8A==
+  dependencies:
+    compare-version "^0.1.2"
+    debug "^4.3.4"
+    fs-extra "^10.0.0"
+    isbinaryfile "^4.0.8"
+    minimist "^1.2.6"
+    plist "^3.0.5"
+
+"@electron/remote@^2.0.8":
+  version "2.0.8"
+  resolved "https://registry.yarnpkg.com/@electron/remote/-/remote-2.0.8.tgz#85ff321f0490222993207106e2f720273bb1a5c3"
+  integrity sha512-P10v3+iFCIvEPeYzTWWGwwHmqWnjoh8RYnbtZAb3RlQefy4guagzIwcWtfftABIfm6JJTNQf4WPSKWZOpLmHXw==
+
 "@electron/universal@1.0.5":
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/@electron/universal/-/universal-1.0.5.tgz#b812340e4ef21da2b3ee77b2b4d35c9b86defe37"
@@ -1152,7 +1169,7 @@
     "@jridgewell/sourcemap-codec" "^1.4.10"
     "@jridgewell/trace-mapping" "^0.3.9"
 
-"@jridgewell/resolve-uri@^3.0.3":
+"@jridgewell/resolve-uri@3.1.0":
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/@jridgewell/resolve-uri/-/resolve-uri-3.1.0.tgz#2203b118c157721addfe69d47b70465463066d78"
   integrity sha512-F2msla3tad+Mfht5cJq7LSXcdudKTWCVYUgw6pLFOOHSTtZlj6SWNYAp+AhuqLmWdBO2X5hPrLcu8cVP8fy28w==
@@ -1162,18 +1179,18 @@
   resolved "https://registry.yarnpkg.com/@jridgewell/set-array/-/set-array-1.1.2.tgz#7c6cf998d6d20b914c0a55a91ae928ff25965e72"
   integrity sha512-xnkseuNADM0gt2bs+BvhO0p78Mk762YnZdsuzFV018NoG1Sj1SCQvpSqa7XUaTam5vAGasABV9qXASMKnFMwMw==
 
-"@jridgewell/sourcemap-codec@^1.4.10":
+"@jridgewell/sourcemap-codec@1.4.14", "@jridgewell/sourcemap-codec@^1.4.10":
   version "1.4.14"
   resolved "https://registry.yarnpkg.com/@jridgewell/sourcemap-codec/-/sourcemap-codec-1.4.14.tgz#add4c98d341472a289190b424efbdb096991bb24"
   integrity sha512-XPSJHWmi394fuUuzDnGz1wiKqWfo1yXecHQMRf2l6hztTO+nPru658AyDngaBe7isIxEkRsPR3FZh+s7iVa4Uw==
 
 "@jridgewell/trace-mapping@^0.3.9":
-  version "0.3.15"
-  resolved "https://registry.yarnpkg.com/@jridgewell/trace-mapping/-/trace-mapping-0.3.15.tgz#aba35c48a38d3fd84b37e66c9c0423f9744f9774"
-  integrity sha512-oWZNOULl+UbhsgB51uuZzglikfIKSUBO/M9W2OfEjn7cmqoAiCgmv9lyACTUacZwBz0ITnJ2NqjU8Tx0DHL88g==
+  version "0.3.16"
+  resolved "https://registry.yarnpkg.com/@jridgewell/trace-mapping/-/trace-mapping-0.3.16.tgz#a7982f16c18cae02be36274365433e5b49d7b23f"
+  integrity sha512-LCQ+NeThyJ4k1W2d+vIKdxuSt9R3pQSZ4P92m7EakaYuXcVWbHuT5bjNcqLd4Rdgi6xYWYDvBJZJLZSLanjDcA==
   dependencies:
-    "@jridgewell/resolve-uri" "^3.0.3"
-    "@jridgewell/sourcemap-codec" "^1.4.10"
+    "@jridgewell/resolve-uri" "3.1.0"
+    "@jridgewell/sourcemap-codec" "1.4.14"
 
 "@malept/cross-spawn-promise@^1.1.0":
   version "1.1.1"
@@ -1528,7 +1545,7 @@
   resolved "https://registry.yarnpkg.com/@vue/cli-overlay/-/cli-overlay-4.5.19.tgz#d1206f7802bcba1d9c307695b54091df996db804"
   integrity sha512-GdxvNSmOw7NHIazCO8gTK+xZbaOmScTtxj6eHVeMbYpDYVPJ+th3VMLWNpw/b6uOjwzzcyKlA5dRQ1DAb+gF/g==
 
-"@vue/cli-plugin-babel@4.40":
+"@vue/cli-plugin-babel@4.4.0":
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/@vue/cli-plugin-babel/-/cli-plugin-babel-4.4.0.tgz#4ca9c7a6690ffa250cdf26b57c13461e6d1283ee"
   integrity sha512-Zb8E7pCHx4uga7EpV10sK5fYa1p63czm24e2L+5lqvTUM1Pk3HGAHrzfD5suLig+O/DgOoT8/LpItssX/Un9Ag==
@@ -4426,7 +4443,12 @@ electron-osx-sign@^0.5.0:
     minimist "^1.2.0"
     plist "^3.0.1"
 
-electron-pdf-window@1.0.12:
+electron-pdf-viewer@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/electron-pdf-viewer/-/electron-pdf-viewer-1.0.1.tgz#4396ff337a10edbb2311c544b5427aafb3570512"
+  integrity sha512-KKtJeHFRIEpxw1/iEOhG7JPOjbz32lW6ntfFFERcBsbup4ljd00EoTCrt8pCvXTljH6Uv2o8NwYltGKQZ5zGwQ==
+
+electron-pdf-window@^1.0.12:
   version "1.0.12"
   resolved "https://registry.yarnpkg.com/electron-pdf-window/-/electron-pdf-window-1.0.12.tgz#47475c40c25bc2fb18ca152345ad3d58382f4ff2"
   integrity sha512-A9bWEXh7Ch5fnOu+EIrV4PdMIypkOfrQ44pejJnoY5p7fWElYYnGaAtWT4oTpHyEJePVomK9Bc40PVPlZQYVpg==
@@ -8535,7 +8557,7 @@ pkg-up@^2.0.0:
   dependencies:
     find-up "^2.1.0"
 
-plist@^3.0.1, plist@^3.0.4:
+plist@^3.0.1, plist@^3.0.4, plist@^3.0.5:
   version "3.0.6"
   resolved "https://registry.yarnpkg.com/plist/-/plist-3.0.6.tgz#7cfb68a856a7834bca6dbfe3218eb9c7740145d3"
   integrity sha512-WiIVYyrp8TD4w8yCvyeIr+lkmrGRd5u0VbRnU+tP/aRLxP/YadJUYOMZJ/6hIa3oUyVCsycXvtNRgd5XBJIbiA==
@@ -11248,7 +11270,7 @@ vue-chartjs@3.5.0:
   resolved "https://registry.yarnpkg.com/vue-chartjs/-/vue-chartjs-3.5.0.tgz#edd0c2be94c521bcbc5357c24afb9f3560855f84"
   integrity sha512-yWNhG3B6g6lvYqNInP0WaDWNZG/SNb6XnltkjR0wYC5pmLm6jvdiotj8er7Mui8qkJGfLZe6ULjrZdHWjegAUg==
 
-vue-cli-plugin-electron-builder@2.1.1:
+vue-cli-plugin-electron-builder@~2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/vue-cli-plugin-electron-builder/-/vue-cli-plugin-electron-builder-2.1.1.tgz#de8bed25b32e73e28dd08061dd2a3c6bfff73227"
   integrity sha512-ZrxFZ2uxgpwyFUE8LtguYqaTzSfZ1osME1uFlIj/Iz7GtLrATqs23n/BkKEpyEf5nYNAylzIM8ykGAfH/0QdmA==

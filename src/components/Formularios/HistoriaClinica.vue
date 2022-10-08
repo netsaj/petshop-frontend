@@ -329,9 +329,7 @@
 import Datepicker from 'vuejs-datepicker'
 import {es} from 'vuejs-datepicker/dist/locale'
 import * as models from "@/utils/models";
-
-const {BrowserWindow} = require('electron').remote
-const PDFWindow = require('electron-pdf-window')
+const {BrowserWindow}  = require("@electron/remote")
 const calendar = require('../../utils/calendar')
 export default {
     components: {Datepicker},
@@ -458,17 +456,19 @@ export default {
             this.item.adjuntos = tempAjuntos
         },
         mostrarModal(row) {
-            if (row['archivo']['content_type'] === "application/pdf") {
-                const win = new BrowserWindow({
-                    width: 1000,
-                    height: 620,
-                    webPreferences: {plugins: true, nodeIntegration: true}
-                })
-                PDFWindow.addSupport(win)
-                win.loadURL(this.$http.defaults.baseURL + "/" + row.archivo.ruta)
-            } else {
-                window.open(this.$http.defaults.baseURL + "/" + row.archivo.ruta, "_blank")
-            }
+            const win = new BrowserWindow({
+                width: 1000,
+                height: 620,
+                webPreferences: {
+                    plugins: true
+                }
+            })
+            //PDFWindow.addSupport(win)
+            //win.hide()
+            //win.close()
+            this.external_resource = this.$http.defaults.baseURL + "/" + row.archivo.ruta
+            win.loadURL(this.external_resource)
+            this.$refs.modalVisor.showModal()
         }
     },
     created() {

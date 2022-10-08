@@ -146,7 +146,7 @@ export default {
             this.intervaloLoading()
             this.mensaje = 'Buscando servidor...'
             this.serverFound = false
-            let routes = [`http://192.168.0.100:3000`, `http://192.168.1.100:3000`, `http://192.168.10.100:3000`, 'http://localhost:3000']
+            let routes = ['http://localhost:3000',`http://192.168.0.100:3000`, `http://192.168.1.100:3000`, `http://192.168.10.100:3000`]
             return new Promise((resolve, reject) => {
                 let count = 0;
                 for (let i = 0; i < routes.length; i++) {

@@ -1,3 +1,4 @@
+const path = require('path');
 const webpack = require("webpack");
 
 module.exports = {
@@ -21,11 +22,12 @@ module.exports = {
         "vuetify"
     ],
     configureWebpack:{
+        devtool: 'inline-source-map',
         plugins:[
             new webpack.ProvidePlugin({
                 $: "jquery",
                 jQuery: "jquery"
             })
-        ]
+        ],
     }
 }

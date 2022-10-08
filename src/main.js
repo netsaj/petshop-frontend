@@ -122,9 +122,10 @@ Vue.component(VueCountdown.name, VueCountdown);
 
 const router = new VueRouter({
     routes,
-    history: false
+    //history: false,
+    mode: process.env.IS_ELECTRON ? 'hash' : 'history',
 })
-
+Vue.config.debug = true
 Vue.prototype.$calendar = calendar
 Vue.prototype.$httpErrors = require('./utils/axios');
 Vue.prototype.$alerts = alerts

@@ -29,9 +29,9 @@
                                         v-b-tooltip="`${row['tercero'].direccion}, ${row['tercero'].barrio}`">{{ row['tercero'].direccion }} , {{ row['tercero'].barrio }} </span>
                                     </div>
                                     <i class="fa fa-phone-alt"></i> Fijo:
-                                    {{ row["tercero"].telefono.length > 0 ? row["tercero"].telefono : `No registrado` }}&emsp;&emsp;|&emsp;&emsp;
+                                    {{ row["tercero"]["telefono"] > 0 ? row["tercero"]["telefono"] : `No registrado` }}&emsp;&emsp;|&emsp;&emsp;
                                     <i class="fa fa-phone-alt"/> Cel:
-                                    {{ row["tercero"].celular.length > 0 ? row["tercero"].celular : `No registrado` }}
+                                    {{ row["tercero"]["celular"] > 0 ? row["tercero"]["celular"] : `No registrado` }}
                                 </div>
                                 <div class="col-md-2 text-center">
                                     <b>Mascota</b>

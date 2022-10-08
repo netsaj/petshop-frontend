@@ -2,30 +2,27 @@
  * VueStudio v1.0.0 (https://seantheme.com/vue-studio/)
  * Copyright 2020 SeanTheme
  */
-
-@import "_variables.scss";
 @import "./clock/css/loader.css";
+@import "_variables.scss";
 /*@import "~bootswatch/dist/cosmo/bootstrap.min.css";*/
-@import "~bootstrap/dist/css/bootstrap.min.css";
-@import "~bootstrap-vue/dist/bootstrap-vue.css";
+@import "node_modules/bootstrap/scss/bootstrap.scss";
+@import "node_modules/bootstrap-vue/src/index.scss";
 @import "~alertifyjs/build/css/alertify.min.css";
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
 
 /*@import "./clock/css/plugins.css";*//*@import "./clock/css/plugins.css";*/
 @import "./clock/css/components/timeline/custom-timeline.css";
-@import "~@fullcalendar/bootstrap/main.css";
-//@import "_functions.scss";
-//@import "_mixins.scss";
-//@import "_helper.scss";
-//@import "_reboot.scss";
-//
-//@import "_app.scss";
-//@import "_ui.scss";
-//@import "_plugins.scss";
-//@import "_pages.scss";
-//@import "_widgets.scss";
-//@import "ui";
-//@import "widgets";
+
+@import "_functions.scss";
+@import "_mixins.scss";
+@import "_helper.scss";
+@import "_reboot.scss";
+
+@import "_app.scss";
+@import "_ui.scss";
+@import "_plugins.scss";
+@import "_pages.scss";
+@import "_widgets.scss";
 
 
 .form-group > label {
@@ -33,7 +30,7 @@
     font-size: 0.83em;
     margin-bottom: 0 !important;
     text-transform: capitalize;
-    font-family: 'monospace';
+    font-family: $font-family-monospace;
     margin-left: 10px;
 }
 
@@ -42,7 +39,7 @@
     font-size: 0.83em;
     margin-bottom: 0 !important;
     text-transform: capitalize;
-    font-family: 'monospace';
+    font-family: $font-family-monospace;
     margin-left: 10px;
 }
 
@@ -110,7 +107,6 @@
 input, select > :enabled {
     /*font-size: 1.01rem !important;*/
     background: white;
-
 }
 
 input:disabled, input:read-only, select:read-only, .vs--disabled, .v-select.disabled, textarea:disabled, textarea:read-only {
@@ -129,10 +125,10 @@ input:disabled, input:read-only, select:read-only, .vs--disabled, .v-select.disa
 .alertify-logs , .alertify-notifier , .ajs-message, .ajs-visible{
     z-index:999999999999999999 !important;
 }
- div > .lazy-list-item{
-     width: 100% !important;
-     height: 100% !important;
- }
+div > .lazy-list-item{
+    width: 100% !important;
+    height: 100% !important;
+}
 .vm--modal{
     border: #0b2e13 2em;
     border-radius: 20px !important;
